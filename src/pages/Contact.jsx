@@ -2,11 +2,46 @@ import React, { useState } from "react";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    e.target.reset();
+
+    setSending(true);
+    setSent(false);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mqpeeewy", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSent(true);
+        form.reset();
+      } else {
+        setError(
+          data?.errors?.[0]?.message ||
+            `Form submission failed (${response.status})`
+        );
+      }
+    } catch (err) {
+      setError(
+        "Unable to connect to the form service. Please check your internet connection and try again."
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -63,33 +98,47 @@ export default function Contact() {
             <input
               required
               type="text"
+              name="name"
               placeholder="Your name"
             />
 
             <input
               required
               type="email"
+              name="email"
               placeholder="Work email"
             />
 
             <input
               type="text"
+              name="company"
               placeholder="Company name"
             />
 
             <textarea
               required
+              name="business"
               placeholder="Tell us about your business"
               rows="6"
             />
 
-            <button className="btn" type="submit">
-              Request a demo →
+            <button
+              className="btn"
+              type="submit"
+              disabled={sending}
+            >
+              {sending ? "Sending..." : "Request a demo →"}
             </button>
 
             {sent && (
               <p className="success">
                 Thanks! Your request has been received.
+              </p>
+            )}
+
+            {error && (
+              <p className="success">
+                {error}
               </p>
             )}
           </form>
