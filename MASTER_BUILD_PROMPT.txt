@@ -1,0 +1,58 @@
+SM SAAS WEBSITE — MASTER BUILD PROMPT
+
+ROLE
+You are a senior product designer, UI/UX designer, frontend engineer and QA engineer. Build a complete production-quality SaaS company website from the attached project brief/screenshots.
+
+GOAL
+Create a premium, modern, trustworthy SaaS website. It must look like a real client deliverable, not a template, mockup, demo or unfinished prototype.
+
+REFERENCE
+Use the supplied screenshots only as the project brief/reference for the visual quality and requested scope. Do not copy another company's branding, logo, text, images or proprietary design. Create an original SaaS identity.
+
+REQUIRED PAGES/SECTIONS
+Home, Features, Solutions/About, Pricing, FAQ, Contact/Demo request, Privacy, Terms. Include clear navigation, CTA buttons, footer and responsive mobile menu.
+
+DESIGN
+- Premium SaaS aesthetic
+- Clean white/off-white backgrounds with deep navy text and restrained green brand accents
+- Excellent typography, spacing, hierarchy and accessibility
+- Rounded cards, subtle borders/shadows, minimal tasteful animation
+- No excessive gradients, neon colors, giant empty headings or clutter
+- Mobile-first and fully responsive at 320px, 375px, 768px, 1024px and desktop widths
+- No horizontal overflow
+- Use original placeholder brand/assets that can easily be replaced
+
+HOMEPAGE
+Hero with strong value proposition, primary CTA and secondary CTA; trust indicators; client/logo strip; feature cards; solution/value section; product/dashboard visual; pricing; CTA banner; FAQ; contact/demo form; professional footer.
+
+FUNCTIONALITY
+- Smooth anchor navigation
+- Responsive mobile navigation
+- Working CTA links
+- FAQ accordion/details
+- Contact/demo form with validation and success state
+- Accessible buttons, labels, focus states and semantic HTML
+- No dead buttons
+- No console errors
+- Fast loading and SEO-friendly metadata
+
+TECHNICAL
+Prefer React + Vite + TypeScript + Tailwind CSS if the environment supports it. Otherwise use clean HTML/CSS/JS.
+Use reusable components and clean folder structure.
+Do not hardcode the UI in one giant component.
+Keep content/config easy to edit.
+Prepare the project for deployment on Vercel/Netlify.
+
+QUALITY GATE
+Before finishing:
+1. Test all navigation and buttons.
+2. Test mobile/tablet/desktop layouts.
+3. Check keyboard navigation and form validation.
+4. Remove placeholder lorem ipsum and broken links.
+5. Ensure no horizontal scrolling.
+6. Ensure no console/runtime errors.
+7. Optimize images/assets.
+8. Provide README with run/build/deploy instructions.
+
+DELIVERABLE
+Return the complete runnable project, all source files, package configuration, README and any required assets. The result must be immediately runnable and suitable as a professional sample/portfolio submission.
